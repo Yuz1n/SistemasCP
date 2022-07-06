@@ -1,4 +1,4 @@
-namespace SistemasCP.Models
+namespace SistemasCP.Models.ViewModels
 {
     public class ErrorViewModel
     {

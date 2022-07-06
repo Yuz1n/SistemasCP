@@ -1,0 +1,20 @@
+﻿@model User
+@{
+    Layout = "_LayoutDeslogada";
+    ViewData["Title"] = "Login";
+}
+<p>Tela Login</p>
+
+<form asp-controller="Login" asp-action-action="Logar" method="post">
+  <div class="mb-3">
+    <label for="User" class="form-label">User</label>
+    <input type="text" asp-for="UserName" class="form-control" id="login" >
+  </div>
+  @Html.ValidationMessageFor(x => x.UserName)
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" asp-for="password" class="form-control" id="password">
+  </div>
+  @Html.ValidationMessageFor(x => x.password)
+  <button type="submit" class="btn btn-primary btn-block">Login</button>
+</form>

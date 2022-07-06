@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using SistemasCP.Data;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SistemasCPContext>(options =>
+    options.UseMySql("server=localhost;initial catalog=Sistemasdb;uid=developer;password=1234567", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -22,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

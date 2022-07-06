@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemasCP.Models;
 using System.Diagnostics;
+using SistemasCP.Models.ViewModels;
 
 namespace SistemasCP.Controllers
 {
